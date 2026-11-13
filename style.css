@@ -1,5 +1,4 @@
-/* Main colors */
-
+/* These are the main colors I chose for my website. */
 :root {
     --navy: #163c66;
     --blue: #276ba6;
@@ -12,8 +11,7 @@
 }
 
 
-/* General styles */
-
+/* Here I set the basic style for the whole page. */
 * {
     box-sizing: border-box;
 }
@@ -46,8 +44,7 @@ a {
 }
 
 
-/* Navigation */
-
+/* I use these styles for the menu at the top of my page. */
 .site-header {
     display: flex;
     align-items: center;
@@ -90,8 +87,7 @@ a {
 }
 
 
-/* Home section */
-
+/* This is how I designed the first section of my website. */
 .hero {
     display: grid;
     grid-template-columns: 1fr 0.85fr;
@@ -148,8 +144,7 @@ h2 span {
 }
 
 
-/* Drawing illustration */
-
+/* I added a simple paper illustration to make the homepage more creative. */
 .hero-art {
     height: 315px;
     position: relative;
@@ -205,8 +200,7 @@ h2 span {
 }
 
 
-/* Project section */
-
+/* Here I style the section about my final project. */
 h2 {
     font-size: 37px;
     line-height: 1.2;
@@ -258,8 +252,7 @@ h2 {
 }
 
 
-/* Interactive PixiJS section */
-
+/* These styles are for the interactive PixiJS area. */
 .interactive-section {
     padding-top: 85px;
     padding-bottom: 90px;
@@ -386,8 +379,7 @@ h2 {
 }
 
 
-/* About me */
-
+/* Here I style the section where I introduce myself. */
 .about-section {
     background: #e5f1f9;
 }
@@ -407,8 +399,7 @@ h2 {
 }
 
 
-/* Footer */
-
+/* I use these styles for the bottom part of my website. */
 footer {
     display: flex;
     justify-content: space-between;
@@ -421,8 +412,7 @@ footer {
 }
 
 
-/* Mobile version */
-
+/* I change some sizes and layouts to make the website work on smaller screens. */
 @media (max-width: 760px) {
 
     .site-header {
