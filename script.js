@@ -1,11 +1,11 @@
-// This is my interactive PixiJS experiment.
-// I wanted to create something simple using blue colors.
+// This is my small interactive experiment using PixiJS.
+// I chose different shades of blue for the animation.
 
 import { Application, Graphics }
 from 'https://cdn.jsdelivr.net/npm/pixi.js@8.22.0/dist/pixi.mjs';
 
 
-// Elements from my HTML file
+// These are the elements I use from my HTML page.
 const box = document.querySelector('#pixi-box');
 
 const layer = document.querySelector('#pixi-container');
@@ -17,7 +17,7 @@ const status = document.querySelector('#art-status');
 const clearButton = document.querySelector('#clear-art');
 
 
-// My color palette
+// These are the blue colors I use for my shapes.
 const palette = [
     0x174f80,
     0x3d8bc2,
@@ -26,7 +26,7 @@ const palette = [
 ];
 
 
-// Variables for the animation
+// I use these variables to keep track of the animation.
 let app;
 
 let particles = [];
@@ -43,7 +43,7 @@ let pointerMoved = false;
 let lastTrail = 0;
 
 
-// This function creates small circles.
+// This function makes small dots in random sizes and colors.
 function makeDot(x, y, burst = false) {
 
     if (!app || particles.length > 180) {
@@ -68,7 +68,7 @@ function makeDot(x, y, burst = false) {
     app.stage.addChild(dot);
 
 
-    // Random direction for each dot
+    // Each dot moves in a random direction.
     const direction = Math.random() * Math.PI * 2;
 
     const speed = burst
@@ -93,7 +93,7 @@ function makeDot(x, y, burst = false) {
 }
 
 
-// This function creates a ripple when I click.
+// This function makes circles and dots when someone clicks.
 function addRipple(x, y) {
 
     if (!app) {
@@ -118,7 +118,7 @@ function addRipple(x, y) {
     });
 
 
-    // Create more dots when clicking
+    // I added more dots to make the click effect bigger.
     for (let i = 0; i < 22; i++) {
 
         makeDot(x, y, true);
@@ -132,7 +132,7 @@ function addRipple(x, y) {
 }
 
 
-// Get the mouse position inside the canvas
+// This finds where the mouse is inside my drawing area.
 function position(event) {
 
     const rect = box.getBoundingClientRect();
@@ -150,7 +150,7 @@ function position(event) {
 }
 
 
-// Clear everything from the canvas
+// This removes all the dots and circles from the screen.
 function resetArtwork() {
 
     for (const item of particles) {
@@ -180,7 +180,7 @@ function resetArtwork() {
 }
 
 
-// Start PixiJS
+// This function starts PixiJS and sets up the drawing area.
 async function start() {
 
     app = new Application();
@@ -201,7 +201,7 @@ async function start() {
     });
 
 
-    // Add the PixiJS canvas to my website
+    // Here I add the PixiJS canvas to my HTML page.
     layer.appendChild(app.canvas);
 
     loading.remove();
@@ -216,7 +216,7 @@ async function start() {
     };
 
 
-    // Create one pattern when the page starts
+    // I wanted one pattern to appear when the page opens.
     addRipple(pointer.x, pointer.y);
 
 
@@ -224,7 +224,7 @@ async function start() {
         'Move your mouse across the canvas. Click to create a new pattern.';
 
 
-    // Mouse movement
+    // When the mouse moves, I update its position.
     box.addEventListener('pointermove', event => {
 
         pointer = position(event);
@@ -234,7 +234,7 @@ async function start() {
         const now = performance.now();
 
 
-        // Create a trail of dots
+        // I create small dots that follow the mouse.
         if (now - lastTrail > 28) {
 
             makeDot(pointer.x, pointer.y);
@@ -246,7 +246,7 @@ async function start() {
     });
 
 
-    // Stop creating dots when mouse leaves
+    // The mouse effect stops when the pointer leaves the area.
     box.addEventListener('pointerleave', () => {
 
         pointerMoved = false;
@@ -254,7 +254,7 @@ async function start() {
     });
 
 
-    // Create a new ripple when clicking
+    // Clicking creates a new pattern at the mouse position.
     box.addEventListener('pointerdown', event => {
 
         const p = position(event);
@@ -264,17 +264,17 @@ async function start() {
     });
 
 
-    // Clear button
+    // This button removes the artwork so I can start again.
     clearButton.addEventListener('click', resetArtwork);
 
 
-    // Animation loop
+    // This part updates the animation while the page is open.
     app.ticker.add(ticker => {
 
         const delta = Math.min(ticker.deltaTime, 2);
 
 
-        // Animate the dots
+        // I move the dots and slowly make them disappear.
         for (let i = particles.length - 1; i >= 0; i--) {
 
             const p = particles[i];
@@ -291,7 +291,7 @@ async function start() {
             );
 
 
-            // Remove dots when their animation ends
+            // I remove the dots when they are no longer visible.
             if (p.life <= 0) {
 
                 app.stage.removeChild(p.g);
@@ -305,7 +305,7 @@ async function start() {
         }
 
 
-        // Animate the ripples
+        // These circles grow bigger and slowly disappear.
         for (let i = ripples.length - 1; i >= 0; i--) {
 
             const r = ripples[i];
@@ -317,7 +317,7 @@ async function start() {
             r.graphics.clear();
 
 
-            // Outer circle
+            // This makes the bigger circle.
             r.graphics.circle(0, 0, r.radius).stroke({
 
                 width: 2.5,
@@ -329,7 +329,7 @@ async function start() {
             });
 
 
-            // Inner circle
+            // This makes a smaller circle inside the first one.
             r.graphics.circle(0, 0, r.radius * 0.6).stroke({
 
                 width: 1.2,
@@ -341,7 +341,7 @@ async function start() {
             });
 
 
-            // Remove the ripple when it disappears
+            // I remove the circles when their animation is finished.
             if (r.life <= 0) {
 
                 app.stage.removeChild(r.graphics);
@@ -355,7 +355,7 @@ async function start() {
         }
 
 
-        // Add extra dots while moving the mouse
+        // I add some extra dots when the mouse is moving.
         if (pointerMoved && Math.random() < 0.09) {
 
             makeDot(pointer.x, pointer.y);
@@ -367,7 +367,7 @@ async function start() {
 }
 
 
-// Run the interactive artwork
+// This runs the code and shows a message if PixiJS does not load.
 start().catch(error => {
 
     console.error('PixiJS loading error:', error);
