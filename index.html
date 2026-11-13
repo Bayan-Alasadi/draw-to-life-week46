@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Draw to Life - Bayan Alasadi</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation menu -->
+    <header class="site-header" id="home">
+
+        <a href="#home" class="brand">
+            ✳ Bayan <span>Alasadi</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#project">My Project</a>
+            <a href="#interactive">Interactive Art</a>
+            <a href="#about">About Me</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- First section -->
+        <section class="hero wrap">
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    CREATIVE PROGRAMMING · WEEK 46
+                </span>
+
+                <h1>
+                    Hi, I'm Bayan.
+                    <br>
+                    <span>I like making ideas interactive.</span>
+                </h1>
+
+                <p>
+                    I'm studying IT, Media and Design at
+                    Södertörn University.
+
+                    This website is a small introduction
+                    to my final project,
+                    <strong>Draw to Life</strong>.
+                </p>
+
+                <a class="primary-link" href="#project">
+                    Explore my project ↗
+                </a>
+
+            </div>
+
+
+            <!-- Simple illustration -->
+            <div class="hero-art">
+
+                <div class="paper paper-back"></div>
+
+                <div class="paper paper-front">
+
+                    <span class="paper-caption">
+                        idea → drawing → artwork
+                    </span>
+
+                    <svg viewBox="0 0 310 230">
+
+                        <path
+                            d="M19 179L93 93L151 146L202 69L288 169"
+                            stroke="#245991"
+                            stroke-width="6"
+                            fill="none"
+                            stroke-linecap="round"
+                        />
+
+                        <circle
+                            cx="246"
+                            cy="56"
+                            r="23"
+                            fill="#b1dffa"
+                        />
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- My final project -->
+        <section class="project-section" id="project">
+
+            <div class="wrap project-layout">
+
+                <div class="section-copy">
+
+                    <span class="eyebrow">
+                        01 / MY FINAL PROJECT
+                    </span>
+
+                    <h2>
+                        Draw to <span>Life</span>
+                    </h2>
+
+                    <p>
+                        Draw to Life is my final creative
+                        programming project.
+                    </p>
+
+                    <p>
+                        The idea is to let someone draw
+                        a simple sketch and then experiment
+                        with turning it into a new artwork
+                        using AI.
+                    </p>
+
+                    <p>
+                        The project combines drawing,
+                        interaction and digital creativity.
+                    </p>
+
+                    <p>
+                        I'm still working on the final version
+                        of my project.
+                    </p>
+
+                </div>
+
+
+                <!-- Project image -->
+                <figure class="project-preview">
+
+                    <img
+    src="project.preview.jpeg"
+    alt="Screenshot of my Draw to Life project showing the canvas and drawing tools"
+>
+                    >
+
+                    <figcaption>
+                        Preview of my final project
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <!-- Interactive PixiJS section -->
+        <section class="interactive-section wrap" id="interactive">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        02 / INTERACTIVE ART
+                    </span>
+
+                    <h2>
+                        Make a little
+                        <span>blue magic.</span>
+                    </h2>
+
+                </div>
+
+                <p>
+                    This is a small interactive experiment
+                    made with PixiJS.
+
+                    Move your mouse or click to create
+                    different shapes and patterns.
+                </p>
+
+            </div>
+
+
+            <!-- PixiJS appears here -->
+            <div class="experiment">
+
+                <div class="canvas-box" id="pixi-box">
+
+                    <div id="pixi-container"></div>
+
+                    <div class="canvas-instruction">
+
+                        <strong>
+                            Move your mouse
+                        </strong>
+
+                        <span>
+                            or click to add a ripple ✳
+                        </span>
+
+                    </div>
+
+                    <p class="canvas-loading" id="canvas-loading">
+                        Loading interactive artwork...
+                    </p>
+
+                </div>
+
+
+                <div class="experiment-bar">
+
+                    <p id="art-status">
+                        Move your mouse across the canvas.
+                        Click to create a new pattern.
+                    </p>
+
+                    <button id="clear-art">
+                        Clear art ↺
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- About me -->
+        <section class="about-section" id="about">
+
+            <div class="wrap about-layout">
+
+                <span class="eyebrow">
+                    03 / ABOUT ME
+                </span>
+
+                <div>
+
+                    <h2>
+                        A little about me
+                    </h2>
+
+                    <p>
+                        My name is Bayan Alasadi, and I study
+                        IT, Media and Design at Södertörn
+                        University.
+
+                        I enjoy learning how design and
+                        programming can work together to
+                        create interactive experiences.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="wrap">
+
+        <span>
+            Draw to Life · Week 46
+        </span>
+
+        <span>
+            Bayan Alasadi · 2026
+        </span>
+
+    </footer>
+
+</body>
+
+</html>
