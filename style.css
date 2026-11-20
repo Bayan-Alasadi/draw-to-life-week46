@@ -468,3 +468,25 @@ footer {
     }
 
 }
+
+/* Final project documentation section */
+.project-creators { font-weight: 600; color: var(--navy) !important; }
+.project-note { border-left: 3px solid var(--blue); padding-left: 14px; font-size: 14px; }
+.documentation-section { padding-top: 72px; padding-bottom: 80px; }
+.documentation-gallery { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.documentation-image { margin: 0; padding: 10px; background: white; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.documentation-image img, .photo-placeholder { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 9px; }
+.photo-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #e9f5fc, #d5eafb); color: var(--navy); text-align: center; font-weight: bold; font-size: 20px; border: 2px dashed #92bcd8; }
+.photo-placeholder small { margin-top: 7px; color: var(--muted); font-size: 13px; font-weight: 400; }
+.documentation-image figcaption { font-size: 12px; color: var(--muted); padding: 10px 3px 3px; }
+.demo-video { margin-top: 30px; background: #e9f5fc; border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+.demo-video h3 { margin: 0 0 5px; font-size: 24px; }
+.demo-video p { margin: 0 0 14px; color: var(--muted); }
+.demo-video video { width: 100%; max-height: 480px; display: block; background: #163c66; border-radius: 12px; }
+.demo-video .upload-reminder { margin: 12px 0 0; font-size: 13px; }
+@media (max-width: 760px) {
+  .documentation-section { padding-top: 45px; padding-bottom: 45px; }
+  .documentation-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .demo-video { padding: 14px; }
+}
+@media (max-width: 420px) { .documentation-gallery { grid-template-columns: 1fr; } }

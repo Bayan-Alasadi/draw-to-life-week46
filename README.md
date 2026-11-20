@@ -1,62 +1,41 @@
-# Draw to Life – Week 46
+# Draw to Life – Final Project Documentation (Week 46 website)
 
-This is my personal website for the Week 46 Creative Programming assignment at Södertörn University.
+This is the updated Week 46 website for the final Creative Programming project **Draw to Life**, created by **Bayan Alasadi and Hanan Mughrabi** at Södertörn University.
 
-The website introduces me and my final project, Draw to Life. It also includes a small interactive experiment made with PixiJS.
+## About Draw to Life
 
-## About My Project
+Draw to Life is an interactive art installation. A participant draws with p5.js on a laptop and presses **Generate with AI**. The main application sends the sketch and a text prompt to a local Node.js server, which communicates with the OpenAI image API. The generated abstract artwork is shown on a separate projector page using BroadcastChannel.
 
-Draw to Life is my final creative programming project.
+The **actual drawing application** is a separate project and is **not included in this documentation site**. This website is for the assignment's documentation and includes a PixiJS art experiment from Week 46.
 
-The idea is to let users create their own drawings and explore how AI can turn simple sketches into digital artwork.
+## Final documentation included
 
-The project includes different drawing tools, colors, brush sizes, and options to save drawings.
+The page includes five actual photographs showing the drawing process, AI outputs and the projected installation. The original **draw-to-life.mp4** recording (58.2 seconds) is present in `media/` and has NOT been recompressed, trimmed or changed.
 
-The AI image generation part is still being developed.
+Photo order: blue sketch → AI result → second sketch → second AI result → other generated artwork.
 
-## About This Website
+**IMPORTANT: GitHub publishing limit.** The original video is 132,982,145 bytes (about 133 MB), above GitHub's 100 MB per-file hard limit. The COMPLETE ZIP is for keeping and previewing locally; do not try to commit this video to the GitHub website repository as-is. To publish the website with the exact original video, host the original MP4 separately on a service that permits this size and direct video playback, and change the `<source src="media/draw-to-life.mp4">` URL in `index.html` to its publicly reachable direct MP4 link. Do not expose API keys. A separate **GitHub-ready** ZIP omits only the MP4 and is provided alongside the complete ZIP.
 
-I created a one-page website using HTML, CSS, JavaScript, and PixiJS.
+## Site files
 
-The website has four sections:
+- `index.html`: project overview, gallery/video section, and Week 46 content
+- `style.css`: layout, colors and documentation gallery styling
+- `script.js`: the original interactive PixiJS experiment
+- `draw-to-life-current-screen.png`: current drawing application screenshot
+- `media/`: five documented photos plus the original MP4 recording
 
-- Home – A short introduction about me.
-- My Project – Information and a screenshot of Draw to Life.
-- Interactive Art – A small interactive experiment using PixiJS.
-- About Me – Information about my studies.
+## Run
 
-## Interactive Art
+Open this folder in Visual Studio Code and use **Live Server** to preview this **documentation website**. Internet access is needed to load PixiJS from its CDN.
 
-I used PixiJS to create a simple interactive animation.
+The separate **main AI drawing application** requires Node.js, a server and a private API key. Do not publish `.env`, private API keys or other secrets.
 
-When the user moves the mouse, small blue dots appear and move around the canvas.
+## Tech used
 
-When the user clicks, new circles and patterns are generated.
+Documentation site: HTML, CSS, JavaScript, PixiJS 8 (CDN), optionally GitHub Pages for publishing.
 
-There is also a Clear Art button to remove the shapes.
+Main drawing installation: p5.js, Node.js, OpenAI image API and BroadcastChannel.
 
-## How to Open
+## Use of generative AI
 
-Open the project folder in Visual Studio Code.
-
-Right-click on index.html and select Open with Live Server.
-
-An internet connection is needed to load PixiJS.
-
-## Technologies
-
-- HTML
-- CSS
-- JavaScript
-- PixiJS
-- GitHub Pages
-
-## AI Usage
-
-I used ChatGPT (GPT-6) to help with the website structure, styling, and JavaScript code.
-
-I chose the colors and design direction and provided the information and screenshot from my final project.
-
-I tested the website using Live Server and checked that the interactive elements worked after publishing it on GitHub Pages.
-
-I also reviewed and adjusted parts of the project during development.
+AI tools, including ChatGPT, were used to assist with website structure, styling, JavaScript and documentation text. The project creators chose the direction, worked on the design, tested changes and evaluated the results. Confirm the exact tool/version and your own contributions in the mandatory AI declaration before submission.
